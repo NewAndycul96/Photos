@@ -12,37 +12,34 @@
         <!--Navigation Controller-->
         <scene sceneID="OEI-JD-MTI">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9Db-1b-r9W" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController id="IxX-JJ-a9j" sceneMemberID="viewController">
+                <navigationController toolbarHidden="NO" id="IxX-JJ-a9j" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="L4e-wq-TPa">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XtV-cW-0hm">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="pOk-Hl-Ols" kind="relationship" relationship="rootViewController" id="vXN-mh-hPI"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Db-1b-r9W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-655" y="133"/>
         </scene>
-        <!--View Controller-->
+        <!--Photos View Controller-->
         <scene sceneID="DZx-Tv-wBi">
             <objects>
-                <viewController id="pOk-Hl-Ols" sceneMemberID="viewController">
+                <viewController id="pOk-Hl-Ols" customClass="PhotosViewController" customModule="Photos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7hg-8i-Nd8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d9Y-h9-GEK">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                             </imageView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hZl-23-3Dt">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem title="Item" id="KPe-wO-1XB"/>
-                                </items>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -53,7 +50,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="c5K-MD-3xN"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem systemItem="camera" id="STg-WV-13v">
+                            <connections>
+                                <action selector="openCamera:" destination="pOk-Hl-Ols" id="Alc-jv-a28"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem systemItem="organize" id="cEH-iu-dgE">
+                            <connections>
+                                <action selector="openPhotoLibrary:" destination="pOk-Hl-Ols" id="J6y-9d-LaF"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" id="Q8c-bb-pNr"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jvj-eo-3LV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
